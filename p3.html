@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 400px;
+            height: 300px;
+            background-color: aliceblue;
+            border-radius: 20px;
+            border: 1px solid black;
+        }
+        div
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 100px;
+        }
+        button
+        {
+            width: 150px;
+            height: 5vh;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        input{
+            width: 150px;
+            background-color: beige;
+            height: 5vh;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="con">
+            <h2>Age Calculator</h2>
+            <input type="date">
+            <button onclick=fun()>Calculate your Age</button>
+            <h4></h4>
+        </div>
+    </div>
+    <script>
+        
+        function fun()
+        {
+            let d=document.getElementsByTagName("input")[0]
+            let m=document.getElementsByTagName("h4")[0]
+            console.log(d.value);
+            let r=d.value.split("-");
+            let dt=new Date();
+            let date=dt.getDate();
+            let year=dt.getFullYear();
+            let month=dt.getMonth();
+            let y1=r[0];
+            let m1=r[1]
+            let d1=r[2]
+            console.log(d1,m1,date,month);
+            
+            year=year-y1
+            date=date-d1
+            month=month-m1+1
+            let res=year+" years "+month+" months "+date+" days"
+            m.innerHTML=res
+            
+            
+            
+
+
+                        
+
+        }
+        
+
+    </script>
+</body>
+</html>
